@@ -85,7 +85,7 @@ def main():
             posicion = calcular_posicion(nueva_velocidad, posicion, tiempo)
             contador1 = contador1 + 1
 
-    if contador1 == fasesdiarias:
+    
 
         print(fuerza)
         print(diferencia_radio)
