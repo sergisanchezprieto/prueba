@@ -45,8 +45,9 @@ def calcular_fuerza(Dr , distancia):
     return (fuerza_x, fuerza_y)
 
 def calcular_posicion(v, x, t):
-    s = x + v * t
-    return s
+    s1 = x[0] + v[0] * t
+    s = x[1] + v[1] * t
+    return (s1, s)
 
 
 def calcular_radio(posicion):
@@ -84,19 +85,19 @@ def main():
             posicion = calcular_posicion(nueva_velocidad, posicion, tiempo)
             contador1 = contador1 + 1
 
-        else:
-            print(fuerza)
-            print(diferencia_radio)
-            print(nueva_velocidad)
-            contador1 = 0
-            contador = contador + 1
+    if contador1 == fasesdiarias:
+
+        print(fuerza)
+        print(diferencia_radio)
+        print(nueva_velocidad)
+        contador1 = 0
+        contador = contador + 1
+
+
 
 
 
 
 if __name__ == '__main__':
     main()
-
-
-## formula gravitacionas en forma de vector
 
