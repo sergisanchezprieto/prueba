@@ -1,4 +1,3 @@
-from tabulate import tabulate
 import math
 def comprobartiempo():
     dato = False
@@ -90,14 +89,15 @@ def main():
 
 
 
-
-        resultado = ([tiempo], [dias], [fuerza], [posicion], [diferencia_radio])
+        print("FUERZA")
+        print(fuerza)
+        print("posicion")
+        print(posicion)
+        print("diferencia de radio")
+        print(diferencia_radio)
         contador1 = 0
         contador = contador + 1
 
-
-        print(tabulate(resultado, headers=['TIEMPO' , 'DIAS' , 'FUERZA' , 'POSICION' , 'DISTANCIA']))
-        
 
 
 
@@ -105,3 +105,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+## formula gravitacionas en forma de vector
