@@ -1,3 +1,4 @@
+from tabulate import tabulate
 import math
 def comprobartiempo():
     dato = False
@@ -24,16 +25,18 @@ def calcular_aceleracion(fuerza):
     return acel
 
 def calculartiempodia(t):
-    calculos = 86400 / t      #un día = 86400s #tiempo de dia / tiempo introducido = numero de calculos
+    calculos = 86400e+00 / t      #un día = 86400s #tiempo de dia / tiempo introducido = numero de calculos
     return calculos
 
 
 def calcular_Dvelocidad(a, t):
-    Dvel = a * t
-    return Dvel
+    Dvel = a[0] * t
+    Dvel1 = a[1] * t
+    return (Dvel , Dvel1)
 def calcular_velocidad_nueva(Dv, v):
-    velocidad_nueva = Dv + v
-    return velocidad_nueva
+    velocidad_nueva = Dv[0] + v[0]
+    velocidad_nueva1 = Dv[1] + v[1]
+    return (velocidad_nueva , velocidad_nueva1)
 
 def calcular_fuerza(Dr , distancia):
     masas = 5.9722e+24 * 7.348e+22
@@ -72,7 +75,7 @@ def main():
     fasesdiarias = calculartiempodia(tiempo)
     contador = 0
     contador1 = 0
-    nueva_velocidad = [1023.055 , 0.0]
+    nueva_velocidad = [1023.055e+00 , 0.0e+00]
     while contador <= dias:
 
         while contador1 <= fasesdiarias:
@@ -85,14 +88,16 @@ def main():
             posicion = calcular_posicion(nueva_velocidad, posicion, tiempo)
             contador1 = contador1 + 1
 
-    
 
-        print(fuerza)
-        print(diferencia_radio)
-        print(nueva_velocidad)
+
+
+        resultado = ([tiempo], [dias], [fuerza], [posicion], [diferencia_radio])
         contador1 = 0
         contador = contador + 1
 
+
+        print(tabulate(resultado, headers=['TIEMPO' , 'DIAS' , 'FUERZA' , 'POSICION' , 'DISTANCIA']))
+        
 
 
 
@@ -100,4 +105,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
