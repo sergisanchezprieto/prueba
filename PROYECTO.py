@@ -75,6 +75,9 @@ def main():
     contador = 0
     contador1 = 0
     nueva_velocidad = [1023.055e+00 , 0.0e+00]
+    print("___________________________________________________________________________________________________________________________________")
+    print('    t(s)        t(d)                      F(N)                                               (x, y) (m)             R(m)')
+    print("___________________________________________________________________________________________________________________________________")
     while contador <= dias:
 
         while contador1 <= fasesdiarias:
@@ -88,13 +91,9 @@ def main():
             contador1 = contador1 + 1
 
 
+        print('    %.3f    %.3f     %.3f     %.3f     %.3f     %.3f     %.3f' %(tiempo, contador, fuerza[0], fuerza[1], posicion[0], posicion[1], diferencia_radio))
+        #print(('    '), [tiempo], ('    '), [contador], [fuerza], [posicion], [diferencia_radio])
 
-        print("FUERZA")
-        print(fuerza)
-        print("posicion")
-        print(posicion)
-        print("diferencia de radio")
-        print(diferencia_radio)
         contador1 = 0
         contador = contador + 1
 
@@ -105,6 +104,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-## formula gravitacionas en forma de vector
